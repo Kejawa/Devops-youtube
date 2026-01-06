@@ -1,5 +1,2 @@
  node_modules/
 .env
-
-.ci.txt
-.docker-compose.txt
