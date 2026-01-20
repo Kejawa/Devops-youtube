@@ -49,7 +49,7 @@ EOF
                         -v "$WORKSPACE:/app" \
                         -w /app \
                         docker:27-cli \
-                        docker compose up -d
+                        docker compose -f PATH/TO/YOUR/docker-compose.yml up -d
 
                     echo "showing running containers on host"
                     docker ps
