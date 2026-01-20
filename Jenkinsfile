@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git url: 'https://github.com/Kejawa/Devops-youtube.git', branch: 'master'
+                git url: 'https://github.com/Kejawa/Devops-youtube.git', branch: 'main'
             }
         }
 
