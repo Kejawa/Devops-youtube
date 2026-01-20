@@ -31,7 +31,7 @@ EOF
             steps {
                 sh '''
                     echo "building backend image..."
-                    docker build -t $BACKEND_IMAGE ./ server
+                    docker build -t $BACKEND_IMAGE ./server
 
                     echo "building frontend image..."
                     docker build -t $FRONTEND_IMAGE ./client --build-arg VITE_API_URL=http://localhost:5000/api
