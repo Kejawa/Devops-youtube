@@ -45,7 +45,12 @@ EOF
                     echo "Starting MERN app with host Docker Compose..."
 
                     # Run docker-compose directly on the host via Docker socket
-                    docker compose up -d
+                    docker run --rm \
+                        -v /var/run/docker.sock:/var/run/docker.sock \
+                        -v ${WORKSPACE}:/app \
+                        -w /app \
+                        docker:27-cli \    
+                        docker compose up -d
 
                     echo "showing running containers on host"
                     docker ps
