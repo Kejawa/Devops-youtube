@@ -42,11 +42,10 @@ EOF
         stage('Run with docker compose') {
             steps {
                 sh '''
-                    echo "Starting MERN app with docker compose..."
+                    echo "Starting MERN app with host Docker Compose..."
 
-                    # Use docker-compose commands through host by explicitly calling the host compose file
-                    docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
-                        -v ${WORKSPACE}:/app -w /app docker/compose:2 up -d
+                    # Run docker-compose directly on the host via Docker socket
+                    docker compose -f ${WORKSPACE}/docker-compose.yml up -d
 
                     echo "showing running containers on host"
                     docker ps
