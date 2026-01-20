@@ -46,7 +46,7 @@ EOF
 
                     # Use docker-compose commands through host by explicitly calling the host compose file
                     docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
-                        -v ${WORKSPACE}:/app -w /app docker/compose:2.19.0 up -d
+                        -v ${WORKSPACE}:/app -w /app docker/compose:2 up -d
 
                     echo "showing running containers on host"
                     docker ps
